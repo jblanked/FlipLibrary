@@ -318,7 +318,7 @@ static bool flip_library_weather_fetch(FactLoaderModel *model)
             fhttp.state = ISSUE;
             return false;
         }
-        snprintf(url, 512, "https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&current=temperature_2m,precipitation,rain,showers,snowfall,wind_speed_10m,wind_direction_10m,weather_code&temperature_unit=%s&wind_speed_unit=mph&precipitation_unit=inch&forecast_days=1", lattitude, longitude, use_fahrenheit ? "fahrenheit" : "celsius");
+        snprintf(url, 512, "https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&current=temperature_2m,precipitation,rain,showers,snowfall,wind_speed_10m,wind_direction_10m,weather_code&temperature_unit=%s&wind_speed_unit=mph&precipitation_unit=inch&forecast_days=1", latitude, longitude, use_fahrenheit ? "fahrenheit" : "celsius");
         if (!flipper_http_get_request_with_headers(url, "{\"Content-Type\": \"application/json\"}"))
         {
             FURI_LOG_E(TAG, "Failed to send GET request");
