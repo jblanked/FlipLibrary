@@ -88,7 +88,7 @@ FlipLibraryApp *flip_library_app_alloc()
 
     app->variable_item_ssid = variable_item_list_add(app->variable_item_list_wifi, "SSID", 0, NULL, NULL);
     app->variable_item_password = variable_item_list_add(app->variable_item_list_wifi, "Password", 0, NULL, NULL);
-    app->variable_item_temperature_unit = variable_item_list_add(app->variable_item_list, "Temperature", 2, temperature_unit_change, app);
+    app->variable_item_temperature_unit = variable_item_list_add(app->variable_item_list_wifi, "Temperature", 2, temperature_unit_change, app);
     variable_item_set_current_value_text(app->variable_item_ssid, "");
     variable_item_set_current_value_text(app->variable_item_password, "");
     variable_item_set_current_value_index(app->variable_item_temperature_unit, 0);
