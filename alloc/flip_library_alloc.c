@@ -88,7 +88,7 @@ FlipLibraryApp *flip_library_app_alloc()
 
     app->variable_item_ssid = variable_item_list_add(app->variable_item_list_wifi, "SSID", 0, NULL, NULL);
     app->variable_item_password = variable_item_list_add(app->variable_item_list_wifi, "Password", 0, NULL, NULL);
-    app->variable_item_temperature_unit = variable_item_list_add(app->variable_item_list_wifi, "Temperature", 2, temperature_unit_change, app);
+    app->variable_item_temperature_unit = variable_item_list_add(app->variable_item_list_wifi, "Weather API Temp Unit", 2, temperature_unit_change, app);
     variable_item_set_current_value_text(app->variable_item_ssid, "");
     variable_item_set_current_value_text(app->variable_item_password, "");
     variable_item_set_current_value_index(app->variable_item_temperature_unit, 0);
@@ -114,7 +114,7 @@ FlipLibraryApp *flip_library_app_alloc()
 
     submenu_add_item(app->submenu_main, "Library", FlipLibrarySubmenuIndexLibrary, callback_submenu_choices, app);
     submenu_add_item(app->submenu_main, "About", FlipLibrarySubmenuIndexAbout, callback_submenu_choices, app);
-    submenu_add_item(app->submenu_main, "WiFi", FlipLibrarySubmenuIndexSettings, callback_submenu_choices, app);
+    submenu_add_item(app->submenu_main, "Settings", FlipLibrarySubmenuIndexSettings, callback_submenu_choices, app);
     submenu_add_item(app->submenu_library, "Wikipedia", FlipLibrarySubmenuIndexWiki, callback_submenu_choices, app);
     submenu_add_item(app->submenu_library, "Dictionary", FlipLibrarySubmenuIndexDictionary, callback_submenu_choices, app);
     submenu_add_item(app->submenu_library, "Predict", FlipLibrarySubmenuIndexPredict, callback_submenu_choices, app);
